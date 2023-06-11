@@ -9,13 +9,13 @@ from PIL import Image, ImageTk
 
 def check_for_update():
     try:
-        response = requests.get('https://example.com/version.txt')
+        response = requests.get('https://raw.githubusercontent.com/MooManisLoud/URL-Downloader/main/version.txt')
         latest_version = response.text.strip()
         current_version = 'v0.4'  # Replace with your current version
 
         if latest_version != current_version:
             if messagebox.askyesno("URL Downloader", "An update is available. Do you want to download it?"):
-                webbrowser.open("https://github.com/MooManisLoud/URL-Downloader/blob/main/")
+                webbrowser.open("https://raw.githubusercontent.com/MooManisLoud/URL-Downloader/main/URLDownloader.py")
             else:
                 if messagebox.askyesno("URL Downloader", "Are you sure? Not updating can cause issues. Do you want to continue?"):
                     # Continue with the program
